@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header elevated class="bg-primary text-white" height-hint="98">
+    <q-header bordered class="bg-primary text-white" height-hint="98">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
@@ -13,10 +13,16 @@
       </q-toolbar>
 
       <q-tabs align="center">
-        <q-route-tab to="/page1" label="서비스 이용 안내" />
-        <q-route-tab to="/page2" label="데이터 한 눈에 보기" />
-        <q-route-tab to="/page3" label="나의 연구 현황" />
         <q-route-tab to="/login" label="로그인" />
+        <q-route-tab to="/register1" label="회원가입1" />
+        <q-route-tab to="/register2" label="회원가입2" />
+        <q-route-tab to="/register3" label="회원가입3" />
+        <q-route-tab to="/userinfo1" label="회원정보 수정1" />
+        <q-route-tab to="/userinfo3" label="회원정보 수정2" />
+        <q-route-tab to="/admin/userlist" label="가입신청 리스트" />
+        <q-route-tab to="/admin/userdetail" label="신청자 상세 정보" />
+        <q-route-tab to="/admin/searchuser" label="회원검색" />
+        <q-route-tab to="/admin/serachdata" label="데이터검색" />
       </q-tabs>
     </q-header>
 
@@ -26,7 +32,7 @@
       <EssentialLink />
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="q-ma-md">
       <router-view />
     </q-page-container>
   </q-layout>
