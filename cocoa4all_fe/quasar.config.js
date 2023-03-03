@@ -144,9 +144,9 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
-        description: `A Quasar Project`,
+        name: `COCOA4ALL`,
+        short_name: `cococa4all`,
+        description: `COCOA DB`,
         display: "standalone",
         orientation: "portrait",
         background_color: "#ffffff",

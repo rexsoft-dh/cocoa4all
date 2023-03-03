@@ -1,8 +1,8 @@
 {
   "name": "cocoa4all-fe",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "Quasar App",
+  "description": "COCOA database",
+  "productName": "COCOA4ALL",
   "author": "Daniel Kwon <34282186+danielmsk@users.noreply.github.com>",
   "private": true,
   "scripts": {
