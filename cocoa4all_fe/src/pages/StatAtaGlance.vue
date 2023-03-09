@@ -1,12 +1,8 @@
 <template>
-  <q-page>
-    <PageTitle :title="'홈'" :pathdata="[]" />
-
-    <!-- <span class="t1">csdnckldsnckldsn</span> -->
-    <!-- <q-card flat bordered class="bg-red">
-      <q-card flat bordered class="bg-blue q-pa-md"> cscdsc </q-card>
-    </q-card> -->
-  </q-page>
+  <div>
+    <PageTitle :title="'데이터 한 눈에 보기'" :pathdata="[{ label: '데이터 한 눈에 보기', to: '/stat_at_a_glance' }]" />
+    <div>내용</div>
+  </div>
 </template>
 
 <script>
@@ -14,7 +10,7 @@ import { defineComponent } from 'vue';
 import PageTitle from 'components/PageTitle.vue';
 
 export default defineComponent({
-  name: 'IndexPage',
+  name: 'ServiceInfo',
 
   components: {
     PageTitle,
@@ -33,3 +29,5 @@ export default defineComponent({
   setup() {},
 });
 </script>
+
+<style lang="sass" scoped></style>

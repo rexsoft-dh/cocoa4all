@@ -12,6 +12,8 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 
 const { configure } = require("quasar/wrappers");
 
+let VERSION = "23.03.03";
+
 module.exports = configure(function (ctx) {
   return {
     // https://v2.quasar.dev/quasar-cli-webpack/supporting-ts
@@ -26,7 +28,7 @@ module.exports = configure(function (ctx) {
     boot: [],
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-css
-    css: ["app.scss"],
+    css: ["app.sass"],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
@@ -44,6 +46,9 @@ module.exports = configure(function (ctx) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-build
     build: {
+      env: {
+        VERSION: VERSION,
+      },
       vueRouterMode: "history", // available values: 'hash', 'history'
 
       // transpile: false,

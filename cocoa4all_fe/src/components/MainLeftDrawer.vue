@@ -1,6 +1,6 @@
 <template>
-  <q-list bordered separator>
-    <q-item clickable v-ripple to="/login">
+  <q-list separator>
+    <q-item clickable v-ripple to="/signin">
       <q-item-section> 로그인 </q-item-section>
     </q-item>
     <q-item clickable v-ripple to="/register1">
@@ -34,9 +34,9 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: "EssentialLink",
+  name: 'EssentialLink',
 });
 </script>

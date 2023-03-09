@@ -1,85 +1,46 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-    <q-header bordered class="bg-primary text-white" height-hint="98">
-      <MainHeaderMenu :prop_userinfo="userinfo" />
+  <q-layout view="hHh Lpr lFf">
+    <!-- <q-header bordered class="bg-primary text-white" height-hint="98"> -->
+    <q-header bordered class="bg-white text-black main_header_border">
+      <MainHeader :user="userinfo" @toggleLeftDrawer="toggleLeftDrawer" />
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-      <q-item-label header> Essential Links </q-item-label>
-
-      <EssentialLink />
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered :breakpoint="600" :width="230">
+      <MainLeftDrawer />
     </q-drawer>
 
-    <q-page-container class="q-ma-md">
-      <router-view />
+    <q-page-container>
+      <div class="q-ma-lg">
+        <router-view />
+      </div>
+      <div class="q-mt-xl">
+        <MainFooter />
+      </div>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-import EssentialLink from "components/EssentialLink.vue";
-import MainHeaderMenu from "components/MainHeaderMenu.vue";
-
-const linksList = [
-  {
-    title: "Docs",
-    caption: "quasar.dev",
-    icon: "school",
-    link: "https://quasar.dev",
-  },
-  {
-    title: "Github",
-    caption: "github.com/quasarframework",
-    icon: "code",
-    link: "https://github.com/quasarframework",
-  },
-  {
-    title: "Discord Chat Channel",
-    caption: "chat.quasar.dev",
-    icon: "chat",
-    link: "https://chat.quasar.dev",
-  },
-  {
-    title: "Forum",
-    caption: "forum.quasar.dev",
-    icon: "record_voice_over",
-    link: "https://forum.quasar.dev",
-  },
-  {
-    title: "Twitter",
-    caption: "@quasarframework",
-    icon: "rss_feed",
-    link: "https://twitter.quasar.dev",
-  },
-  {
-    title: "Facebook",
-    caption: "@QuasarFramework",
-    icon: "public",
-    link: "https://facebook.quasar.dev",
-  },
-  {
-    title: "Quasar Awesome",
-    caption: "Community Quasar projects",
-    icon: "favorite",
-    link: "https://awesome.quasar.dev",
-  },
-];
+import { defineComponent } from 'vue';
+import MainHeader from 'components/MainHeader.vue';
+import MainLeftDrawer from 'components/MainLeftDrawer.vue';
+import MainFooter from 'components/MainFooter.vue';
 
 export default defineComponent({
-  name: "MainLayout",
+  name: 'MainLayout',
 
   components: {
-    EssentialLink,
-    MainHeaderMenu,
+    MainHeader,
+    MainFooter,
+    MainLeftDrawer,
   },
 
   data() {
     return {
       userinfo: {
-        userID: "gildong",
-        username: "Hong Gildong",
-        affiliation: "RexSoft",
+        userID: 'gildong',
+        username: 'Hong Gildong',
+        affiliation: 'RexSoft',
       },
       leftDrawerOpen: false,
     };
@@ -90,11 +51,7 @@ export default defineComponent({
       this.leftDrawerOpen = !this.leftDrawerOpen;
     },
   },
-
-  setup() {
-    return {
-      essentialLinks: linksList,
-    };
-  },
 });
 </script>
+
+<style lang="sass"></style>
